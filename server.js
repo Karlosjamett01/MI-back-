@@ -2,7 +2,11 @@ const express = require('express');
 const sql = require('mssql');
 const cors = require('cors');
 const app = express();
-const PORT = 3001;
+app.get('/', (req, res) => {
+  res.send('Servidor backend funcionando correctamente 🚀');
+});
+
+const PORT = process.env.PORT || 3001;
 app.use(cors());
 app.use(cors({
   origin: '*', 
